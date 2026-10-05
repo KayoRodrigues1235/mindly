@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mindly: a plataforma que facilita o acesso ao apoio em saúde para colaboradores.">
+  <title>Mindly: apoio em saúde para colaboradores</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23226857'/%3E%3Cpath d='M14 24c0-6 4-10 10-10s10 4 10 10-4 10-10 10H12l3-4a10 10 0 0 1-1-6Z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Mindly, início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M12 24c0-7 5-12 12-12s12 5 12 12-5 12-12 12H10l4-5a12 12 0 0 1-2-7Z"/><path d="M20 22h8M20 27h5"/></svg>
+        </span>
+        <span>Mind<span>ly</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav-link is-active" data-route="inicio">Início</button>
+        <button class="nav-link" data-route="espacos">Espaços</button>
+        <button class="nav-link" data-route="rede">Rede de apoio</button>
+        <button class="nav-link" data-route="conteudos">Conteúdos</button>
+        <button class="nav-link role-only" data-roles="collaborator" data-route="area">Minha área</button>
+        <button class="nav-link role-only" data-roles="supporter" data-route="apoiador">Apoiador</button>
+        <button class="nav-link role-only" data-roles="company" data-route="empresa">Empresa</button>
+        <button class="nav-link role-only" data-roles="admin" data-route="administracao">Administração</button>
+      </nav>
+
+      <div class="user-actions">
+        <button class="button button-ghost guest-only" data-open-auth="login">Entrar</button>
+        <button class="button button-primary guest-only desktop-only" data-open-auth="register">Tenho um código</button>
+        <button class="profile-button auth-only" id="profile-button" aria-label="Abrir menu do perfil">
+          <span class="avatar" id="user-avatar">MI</span>
+          <span class="profile-copy desktop-only"><strong id="user-alias">Visitante</strong><small id="user-role">Colaborador</small></span>
+        </button>
+        <button class="icon-button mobile-menu-button" id="mobile-menu-button" aria-label="Abrir menu">☰</button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="view is-active" data-view="inicio">
+        <div class="hero-wrap">
+          <div class="hero-content">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> Benefício corporativo de apoio em saúde</span>
+            <h1>Nem todo colaborador<br><em>consegue pedir ajuda.</em></h1>
+            <p>O Mindly é a plataforma que a empresa oferece para que cada pessoa encontre espaços de conversa, rede de apoio, conteúdos e encaminhamento para ajuda especializada. Tudo em um único lugar.</p>
+            <div class="hero-actions">
+              <button class="button button-primary button-large" data-open-auth="register">Tenho um código da empresa <span aria-hidden="true">→</span></button>
+              <button class="button button-secondary button-large" data-open-auth="company">Oferecer na minha empresa</button>
+            </div>
+            <div class="trust-list" aria-label="Características da plataforma">
+              <span>✓ Sem custo para o colaborador</span>
+              <span>✓ A empresa paga, mas não vê</span>
+              <span>✓ 100% digital</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Prévia de um espaço de conversa online">
+            <div class="soft-shape shape-one"></div>
+            <div class="soft-shape shape-two"></div>
+            <div class="meeting-card">
+              <div class="meeting-top">
+                <div><small>ESPAÇO DE CONVERSA</small><strong>Respiro</strong></div>
+                <span class="live-pill">● ONLINE</span>
+              </div>
+              <div class="people-row">
+                <div class="person person-a"><span>LS</span></div>
+                <div class="person person-b"><span>BF</span></div>
+                <div class="person person-c"><span>RC</span></div>
+                <div class="person person-d"><span>VL</span></div>
+              </div>
+              <div class="quote-bubble">“Aqui eu consigo falar e também ser ouvido.”</div>
+              <div class="meeting-footer">
+                <div><span class="calendar-icon">▣</span><strong>Segunda, 19:00</strong><small>Encontro semanal</small></div>
+                <button class="round-button" data-route="espacos" aria-label="Ver espaços de conversa">→</button>
+              </div>
+            </div>
+            <div class="floating-note"><span>♥</span><div><strong>Pequenos passos</strong><small>também são progresso</small></div></div>
+          </div>
+        </div>
+
+        <section class="section-block" id="funcionamento">
+          <div class="section-heading centered">
+            <span class="eyebrow">COMO FUNCIONA</span>
+            <h2>Simples para a empresa. Fácil para o colaborador.</h2>
+            <p>Quando uma pessoa não está bem, o ambiente ao redor também sente. O Mindly aproxima quem precisa de apoio de quem pode apoiar.</p>
+          </div>
+          <div class="feature-grid four">
+            <article class="feature-card"><span class="feature-number">01</span><div class="feature-icon">▤</div><h3>A empresa contrata</h3><p>Uma assinatura mensal de valor fixo libera o acesso para toda a equipe.</p></article>
+            <article class="feature-card"><span class="feature-number">02</span><div class="feature-icon">◎</div><h3>O colaborador entra</h3><p>Com o código da empresa, cria a conta, escolhe um apelido e pronto.</p></article>
+            <article class="feature-card"><span class="feature-number">03</span><div class="feature-icon">⌕</div><h3>Encontra apoio</h3><p>Cada pessoa encontra apoio de acordo com a sua necessidade e no seu ritmo.</p></article>
+            <article class="feature-card"><span class="feature-number">04</span><div class="feature-icon">♥</div><h3>A rede acolhe</h3><p>Comunidade, voluntários, estagiários supervisionados e profissionais participantes.</p></article>
+          </div>
+        </section>
+
+        <section class="section-block tight">
+          <div class="section-heading centered">
+            <span class="eyebrow">TUDO EM UM ÚNICO LUGAR</span>
+            <h2>O que o colaborador acessa</h2>
+          </div>
+          <div class="feature-grid four">
+            <article class="feature-card"><div class="feature-icon">◌</div><h3>Espaços de conversa</h3><p>Encontros semanais por tema, conduzidos por alguém da rede.</p><button class="text-button" data-route="espacos">Ver espaços →</button></article>
+            <article class="feature-card"><div class="feature-icon">♙</div><h3>Rede de apoio</h3><p>Pessoas preparadas para ouvir, orientar e caminhar junto.</p><button class="text-button" data-route="rede">Conhecer a rede →</button></article>
+            <article class="feature-card"><div class="feature-icon">❏</div><h3>Conteúdos e orientações</h3><p>Leituras curtas para entender o que você sente e o que fazer.</p><button class="text-button" data-route="conteudos">Ver conteúdos →</button></article>
+            <article class="feature-card"><div class="feature-icon">↗</div><h3>Encaminhamento</h3><p>Orientação para chegar à ajuda especializada, no SUS ou na rede.</p><button class="text-button" data-route="rede">Como funciona →</button></article>
+          </div>
+        </section>
+
+        <section class="section-block tight" id="planos">
+          <div class="split-block">
+            <article class="privacy-panel">
+              <span class="eyebrow">PRIVACIDADE</span>
+              <h2>A empresa paga, mas não vê.</h2>
+              <ul class="check-list">
+                <li>A empresa nunca acessa dados individuais: nem quem usou, nem o que foi dito, nem os check-ins.</li>
+                <li>Os indicadores são sempre somados e só aparecem a partir de <span id="privacy-minimum">5</span> colaboradores ativos.</li>
+                <li>Nos espaços de conversa, o colaborador aparece com um apelido.</li>
+                <li>Dados de saúde são tratados com consentimento do colaborador, como pede a LGPD.</li>
+              </ul>
+            </article>
+            <article class="panel plan-card">
+              <span class="panel-kicker">PARA EMPRESAS</span>
+              <h2 id="plan-name">Plano inicial</h2>
+              <div class="plan-price"><strong id="plan-price">R$ 129,99</strong><span>por mês, por empresa</span></div>
+              <p class="plan-note" id="plan-seats">Para até 20 colaboradores.</p>
+              <ul class="check-list">
+                <li>Acesso à plataforma</li>
+                <li>Área do colaborador</li>
+                <li>Rede de apoio</li>
+                <li>Conteúdos</li>
+                <li>Recursos de acompanhamento</li>
+                <li>Indicadores agregados</li>
+              </ul>
+              <button class="button button-primary button-large" data-open-auth="company">Oferecer na minha empresa</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="safety-banner">
+          <div class="safety-icon">+</div>
+          <div><strong>O Mindly acolhe, orienta e encaminha.</strong><p>Não substitui tratamento. Em risco imediato, ligue para o SAMU no 192 ou para o CVV no 188, ou procure uma UPA ou pronto-socorro.</p></div>
+          <button class="text-button" data-route="rede">Ver ajuda especializada →</button>
+        </section>
+      </section>
+
+      <section class="view page-view" data-view="espacos">
+        <div class="page-heading">
+          <div><span class="eyebrow">ESPAÇOS DE CONVERSA</span><h1>Encontre um espaço</h1><p>Escolha um espaço que combine com o seu momento. Lá dentro, as pessoas veem apenas o seu apelido.</p></div>
+          <div class="heading-art" aria-hidden="true">◌</div>
+        </div>
+        <form class="filter-bar" id="space-filter">
+          <label class="search-field"><span>⌕</span><input id="space-search" type="search" placeholder="Buscar por nome, tema ou palavra-chave"></label>
+          <select id="format-filter" aria-label="Filtrar por formato"><option value="all">Todos os formatos</option><option value="online">Online</option><option value="presencial">Presencial</option></select>
+          <button class="button button-primary" type="submit">Buscar</button>
+        </form>
+        <div class="group-grid" id="space-grid"><div class="loading-card">Carregando espaços…</div></div>
+      </section>
+
+      <section class="view page-view" data-view="rede">
+        <div class="page-heading compact"><div><span class="eyebrow">REDE DE APOIO</span><h1>Quem caminha com você</h1><p>A rede do Mindly reúne voluntários, estagiários supervisionados e profissionais. Cada um apoia dentro do seu papel.</p></div></div>
+        <div class="group-grid" id="network-grid"><div class="loading-card">Carregando a rede…</div></div>
+
+        <div class="section-subheading"><span class="eyebrow">AJUDA ESPECIALIZADA</span><h2>Quando buscar cuidado profissional</h2><p>O apoio da rede pode caminhar junto com o cuidado especializado.</p></div>
+        <div class="help-grid">
+          <article class="panel"><span class="help-number">01</span><h2>UBS</h2><p>É a principal porta de entrada do SUS. Procure a unidade mais próxima para acolhimento e orientação.</p></article>
+          <article class="panel"><span class="help-number">02</span><h2>CAPS e CAPS AD</h2><p>Serviços públicos de saúde mental e de cuidado relacionado ao uso de álcool e outras drogas.</p></article>
+          <article class="panel urgent"><span class="help-number">!</span><h2>Risco imediato</h2><p>Ligue para o SAMU no <strong>192</strong> ou para o CVV no <strong>188</strong>, ou procure uma UPA ou pronto-socorro.</p></article>
+        </div>
+        <div class="panel cta-panel">
+          <div><strong>Precisa de um encaminhamento?</strong><p>Peça na sua área: alguém da rede orienta o próximo passo.</p></div>
+          <button class="button button-primary" id="referral-cta">Pedir encaminhamento</button>
+        </div>
+      </section>
+
+      <section class="view page-view" data-view="conteudos">
+        <div class="page-heading compact"><div><span class="eyebrow">CONTEÚDOS E ORIENTAÇÕES</span><h1>Para ler no seu tempo</h1><p>Leituras curtas, escritas para orientar. Elas não substituem a conversa com um profissional.</p></div></div>
+        <div class="privacy-note" id="content-locked" hidden>Os conteúdos completos fazem parte do acesso oferecido pela empresa. Entre com a sua conta para ler.</div>
+        <div class="content-grid" id="content-grid"><div class="loading-card">Carregando conteúdos…</div></div>
+      </section>
+
+      <section class="view page-view" data-view="area">
+        <div class="dashboard-heading"><div><span class="eyebrow">ÁREA DO COLABORADOR</span><h1>Olá, <span id="dashboard-name">por aqui</span>.</h1><p>Um passo de cada vez. Este espaço é seu.</p></div><button class="button button-secondary" data-route="espacos">Explorar espaços</button></div>
+        <div class="privacy-note">Acesso oferecido por <strong id="dashboard-company">sua empresa</strong>. Ela não vê nada do que você registra aqui.</div>
+        <div class="dashboard-grid">
+          <article class="panel next-panel" id="next-meeting-panel"></article>
+          <article class="panel checkin-panel">
+            <span class="panel-kicker">CHECK-IN DE HOJE</span>
+            <h2>Como você está?</h2>
+            <p>Esta resposta é privada e ajuda você a observar sua jornada.</p>
+            <form id="checkin-form">
+              <div class="mood-picker" role="radiogroup" aria-label="Como você está se sentindo">
+                <label><input type="radio" name="mood" value="1"><span>😞</span><small>Difícil</small></label>
+                <label><input type="radio" name="mood" value="2"><span>😕</span><small>Baixo</small></label>
+                <label><input type="radio" name="mood" value="3"><span>😐</span><small>Neutro</small></label>
+                <label><input type="radio" name="mood" value="4"><span>🙂</span><small>Bem</small></label>
+                <label><input type="radio" name="mood" value="5"><span>😊</span><small>Ótimo</small></label>
+              </div>
+              <textarea name="note" maxlength="400" placeholder="Quer registrar algo sobre hoje? (opcional)"></textarea>
+              <button class="button button-primary" type="submit">Salvar check-in</button>
+            </form>
+            <div class="progress-stat"><strong id="checkin-count">0</strong><span>check-ins realizados</span></div>
+          </article>
+          <article class="panel my-groups-panel"><div class="panel-title-row"><div><span class="panel-kicker">MINHA REDE</span><h2>Meus espaços</h2></div><span class="count-badge" id="space-count">0</span></div><div id="my-spaces"></div></article>
+          <article class="panel referral-panel">
+            <span class="panel-kicker">AJUDA ESPECIALIZADA</span>
+            <h2>Pedir encaminhamento</h2>
+            <p>Conte o que você procura. Um profissional ou estagiário supervisionado da rede responde com o próximo passo.</p>
+            <form id="referral-form">
+              <label class="field-label" for="referral-topic">Assunto</label>
+              <select id="referral-topic" name="topic" required></select>
+              <label class="field-label" for="referral-preference">Onde você prefere buscar ajuda</label>
+              <select id="referral-preference" name="preference" required></select>
+              <label class="field-label" for="referral-note">Quer contar mais? (opcional)</label>
+              <textarea id="referral-note" name="note" maxlength="400" placeholder="Escreva só o que se sentir à vontade para dizer."></textarea>
+              <button class="button button-primary" type="submit">Enviar pedido</button>
+            </form>
+          </article>
+          <article class="panel"><span class="panel-kicker">MEUS PEDIDOS</span><h2>Encaminhamentos</h2><div id="my-referrals"></div></article>
+        </div>
+      </section>
+
+      <section class="view page-view" data-view="apoiador">
+        <div class="dashboard-heading"><div><span class="eyebrow">PAINEL DO APOIADOR</span><h1>Cuidar da rede</h1><p>Acompanhe seus espaços, receba novas pessoas e oriente quem pede ajuda especializada.</p></div></div>
+        <div class="summary-grid" id="supporter-stats"></div>
+        <div class="panel table-panel"><div class="panel-title-row"><div><span class="panel-kicker">NOVOS PARTICIPANTES</span><h2>Solicitações pendentes</h2></div></div><div id="pending-list"></div></div>
+        <div class="panel table-panel"><div class="panel-title-row"><div><span class="panel-kicker">AJUDA ESPECIALIZADA</span><h2>Pedidos de encaminhamento</h2></div></div><div id="referral-queue"></div></div>
+      </section>
+
+      <section class="view page-view" data-view="empresa">
+        <div class="dashboard-heading"><div><span class="eyebrow">PAINEL DA EMPRESA</span><h1 id="company-name">Sua empresa</h1><p>Acompanhe o plano e os indicadores somados de uso. Nenhum dado individual aparece aqui.</p></div></div>
+        <div class="company-grid">
+          <article class="panel" id="company-plan"></article>
+          <article class="panel" id="company-access"></article>
+        </div>
+        <div class="privacy-note" id="company-privacy"></div>
+        <div class="summary-grid" id="company-indicators"></div>
+      </section>
+
+      <section class="view page-view" data-view="administracao">
+        <div class="dashboard-heading"><div><span class="eyebrow">SEGURANÇA DA PLATAFORMA</span><h1>Administração</h1><p>Indicadores operacionais e fila de moderação.</p></div></div>
+        <div class="summary-grid" id="admin-stats"></div>
+        <div class="panel table-panel"><div class="panel-title-row"><div><span class="panel-kicker">MODERAÇÃO</span><h2>Denúncias recebidas</h2></div></div><div id="report-list"></div></div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand brand-footer" href="#inicio"><span class="brand-mark small">◌</span><span>Mind<span>ly</span></span></a>
+      <p>O Mindly conecta pessoas.</p>
+      <small>Protótipo acadêmico. Não substitui atendimento profissional.</small>
+    </footer>
+  </div>
+
+  <dialog id="auth-dialog" class="modal">
+    <button class="modal-close" id="auth-close" aria-label="Fechar">×</button>
+    <div class="modal-brand"><span class="brand-mark small">◌</span></div>
+    <div id="login-pane">
+      <span class="eyebrow">BEM-VINDO DE VOLTA</span><h2>Entre no seu espaço</h2><p>Continue de onde parou.</p>
+      <form id="login-form" class="stack-form">
+        <label>E-mail<input type="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com"></label>
+        <label>Senha<input type="password" name="password" autocomplete="current-password" required placeholder="Sua senha"></label>
+        <button class="button button-primary button-large" type="submit">Entrar</button>
+      </form>
+      <div class="demo-box"><strong>Experimentar o protótipo</strong><p>Use uma das contas demonstrativas:</p><button data-demo="collaborator">Colaborador</button><button data-demo="supporter">Apoiador</button><button data-demo="company">Empresa</button><button data-demo="admin">Admin</button></div>
+      <p class="switch-auth">Recebeu um código da empresa? <button data-switch-auth="register">Criar conta</button></p>
+      <p class="switch-auth">Quer oferecer o Mindly? <button data-switch-auth="company">Contratar para a empresa</button></p>
+    </div>
+    <div id="register-pane" hidden>
+      <span class="eyebrow">ACESSO DO COLABORADOR</span><h2>Crie seu espaço</h2><p>Nos espaços de conversa, as pessoas verão apenas o seu apelido.</p>
+      <form id="register-form" class="stack-form">
+        <label>Código da empresa<input type="text" name="inviteCode" required autocapitalize="characters" placeholder="Ex.: MIND-VIZINHO"></label>
+        <label>Seu nome<input type="text" name="name" minlength="2" required placeholder="Usado apenas na sua conta"></label>
+        <label>Apelido público<input type="text" name="alias" minlength="2" required placeholder="Como quer ser chamado nos espaços"></label>
+        <label>E-mail<input type="email" name="email" autocomplete="email" required placeholder="voce@exemplo.com"></label>
+        <label>Senha<input type="password" name="password" autocomplete="new-password" minlength="10" required placeholder="No mínimo 10 caracteres"></label>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Autorizo o uso dos meus dados para acessar a plataforma. Entendo que minha empresa não vê meus registros e que o Mindly não substitui tratamento.</span></label>
+        <button class="button button-primary button-large" type="submit">Criar conta</button>
+      </form>
+      <p class="switch-auth">Já tem uma conta? <button data-switch-auth="login">Entrar</button></p>
+    </div>
+    <div id="company-pane" hidden>
+      <span class="eyebrow">PARA EMPRESAS</span><h2>Ofereça o Mindly</h2><p>Você recebe um código de acesso para compartilhar com a equipe.</p>
+      <form id="company-form" class="stack-form">
+        <label>Nome da empresa<input type="text" name="companyName" minlength="2" required placeholder="Como a equipe conhece a empresa"></label>
+        <label>Seu nome<input type="text" name="name" minlength="2" required placeholder="Quem vai cuidar do Mindly"></label>
+        <label>E-mail<input type="email" name="email" autocomplete="email" required placeholder="voce@empresa.com"></label>
+        <label>Senha<input type="password" name="password" autocomplete="new-password" minlength="10" required placeholder="No mínimo 10 caracteres"></label>
+        <button class="button button-primary button-large" type="submit">Contratar o plano inicial</button>
+      </form>
+      <p class="switch-auth">Nesta versão de demonstração a contratação é simulada e nada é cobrado.</p>
+      <p class="switch-auth">Já tem uma conta? <button data-switch-auth="login">Entrar</button></p>
+    </div>
+  </dialog>
+
+  <div class="profile-menu" id="profile-menu" hidden>
+    <div><strong id="menu-name"></strong><small id="menu-email"></small></div>
+    <button id="logout-button">Sair da conta</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
