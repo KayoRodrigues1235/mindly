@@ -147,3 +147,7 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Banco local de demonstração do Mindly
+data/store.json
+data/store.anterior.json
